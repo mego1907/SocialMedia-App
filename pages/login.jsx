@@ -36,7 +36,7 @@ const Login = ({providers}) => {
             <div key={provider} className="shadow-2xl">
               <button
                 type="button"
-                className="flex bg-white justify-center items-center p-3 rounded-lg outline-none"
+                className="flex bg-white text-black justify-center items-center p-3 rounded-lg outline-none"
                 onClick={() => signIn(provider, { callbackUrl: "/"})}
               >
                 <FcGoogle className="mr-4" /> Sign in with Google
