@@ -10,11 +10,11 @@ function MyApp({ Component, pageProps: {session, ...pageProps} }) {
   return (
     <Provider store={store}>
       <SessionProvider session={session}>
-        <ThemeProvider attribute={"class"}>
+        {/* <ThemeProvider attribute={"class"}> */}
           <Layout>
             <Component {...pageProps} />
           </Layout>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </SessionProvider>
     </Provider>
   );
