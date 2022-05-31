@@ -111,7 +111,12 @@ const Pin = ({ pin }) => {
     }
   }
 
-  
+  const screenWidth = window?.innerWidth;
+  useEffect(() => {
+    if(screenWidth < 768) {
+      setpostHovered(true)
+    }
+  }, [screenWidth])
 
   return (
     <div className="m-2  select-none">
@@ -119,8 +124,6 @@ const Pin = ({ pin }) => {
         className="relative cursor-zoom-in w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
         onMouseEnter={() => setpostHovered(true)}
         onMouseLeave={() => setpostHovered(false)}
-        onTouchStart={() => setpostHovered(!postHovered)}
-        // onTouchEnd={() => setpostHovered(false)}
         onClick={() => router.push(`/pin-details/${pin.id}`)}
       >
         <img
