@@ -9,16 +9,12 @@ const Pins = () => {
   const [pins, setPins] = useState([])
 
   // get All pins
-  useEffect(
-    () =>
-      onSnapshot(
-        query(collection(db, "pins"), orderBy("timestamp", "desc")),
-        (snapshot) => {
-          setPins(snapshot.docs);
-        }
-      ),
-    [db]
-  );
+  useEffect(() => onSnapshot(
+      query(collection(db, "pins"), orderBy("timestamp", "desc")),
+      (snapshot) => {
+        setPins(snapshot.docs);
+      }
+    ), [db]);
 
 
   return (
