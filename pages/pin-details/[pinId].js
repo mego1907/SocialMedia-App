@@ -84,7 +84,6 @@ const PinDetails = () => {
     setLikesOwner(ownersMakeLike);
   }
 
-  console.log(pinDetails);
   // if pin not found return null
   
   if(loading) return (
