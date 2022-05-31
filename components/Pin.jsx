@@ -10,6 +10,9 @@ import Link from 'next/link';
 import { useSession } from 'next-auth/react';
 import { db } from '../config/firebase';
 import { addDoc, collection, deleteDoc, doc, onSnapshot, serverTimestamp, setDoc } from 'firebase/firestore';
+import {
+  AiOutlineLoading3Quarters,
+} from "react-icons/ai";
 
 
 
@@ -126,11 +129,17 @@ const Pin = ({ pin }) => {
         onMouseLeave={() => setpostHovered(false)}
         onClick={() => router.push(`/pin-details/${pin.id}`)}
       >
-        <img
-          src={pin?.data()?.image}
-          alt="user-post"
-          className="w-full rounded-lg"
-        />
+        {pin?.data()?.image ? (
+          <img
+            src={pin?.data()?.image}
+            alt="user-post"
+            className="w-full rounded-lg"
+          />
+        ) : (
+          <div className="w-full h-40 flex justify-center items-center bg-gray-300">
+            <AiOutlineLoading3Quarters className="animate-spin text-lg text-rose-500" />
+          </div>
+        )}
 
         {postHovered && (
           <div className="absolute top-0 w-full h-full flex flex-col justify-between p-1 pr-2 pt-2 pb-2 z-50">
