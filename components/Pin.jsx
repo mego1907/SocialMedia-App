@@ -142,7 +142,7 @@ const Pin = ({ pin }) => {
         )}
 
         {postHovered && (
-          <div className="absolute top-0 w-full h-full flex flex-col justify-between p-1 pr-2 pt-2 pb-2 z-50">
+          <div className="absolute top-0 w-full h-full flex flex-col justify-between p-1 pr-2 pt-2 pb-2 z-40">
             {session && (
               <div className="flex justify-between items-center">
                 <div className="flex gap-2">
