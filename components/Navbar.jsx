@@ -22,7 +22,7 @@ const Navbar = ({ searchTerm, setSearchTerm }) => {
           placeholder="Search"
           className="w-full outline-none p-2 bg-white"
         />
-        {session ? (
+        {session && (
           <div className="flex gap-3">
             <Link href={`/user-profile/${session?.user?.uid}`}>
               <a className="hidden md:block select-none">
@@ -36,14 +36,6 @@ const Navbar = ({ searchTerm, setSearchTerm }) => {
             <Link href={`/create-pin`}>
               <a className="bg-black text-white rounded-lg w-12 h-12 md:h-14 md:w-14 flex justify-center items-center">
                 <IoMdAdd />
-              </a>
-            </Link>
-          </div>
-        ) : (
-          <div>
-            <Link href={`/login`}>
-              <a className="bg-rose-500 rounded-full text-white p-3 px-5">
-                Login
               </a>
             </Link>
           </div>

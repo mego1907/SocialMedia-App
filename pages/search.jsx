@@ -19,9 +19,9 @@ const Search = () => {
           (snapshot) => {
             const pinsFilter = snapshot.docs.filter(
               (pin) =>
-                pin.data().title.includes(searchValue) ||
-                pin.data().category.includes(searchValue) ||
-                pin.data().about.includes(searchValue)
+                pin.data().title.includes(searchValue.toLowerCase()) ||
+                pin.data().category.includes(searchValue.toLowerCase()) ||
+                pin.data().about.includes(searchValue.toLowerCase())
             );
             setPins(pinsFilter);
           }
